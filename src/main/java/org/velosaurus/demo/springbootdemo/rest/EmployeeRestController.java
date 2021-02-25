@@ -1,9 +1,7 @@
 package org.velosaurus.demo.springbootdemo.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.velosaurus.demo.springbootdemo.entity.Employee;
 import org.velosaurus.demo.springbootdemo.service.EmployeeService;
 
@@ -18,7 +16,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class EmployeeRestController {
 
-    private EmployeeService employeeService;
+    private final EmployeeService employeeService;
 
     @Autowired
     public EmployeeRestController(EmployeeService employeeService) {
@@ -37,6 +35,50 @@ public class EmployeeRestController {
     @GetMapping("/employees")
     public List<Employee> getEmployees() {
         return employeeService.getEmployees();
+    }
+
+    @GetMapping("/employees/{employeeId}")
+    public Employee getEmployee(@PathVariable int employeeId) {
+
+        Employee employee = employeeService.findById(employeeId);
+
+        if (employee == null) {
+            throw new RuntimeException(String.format("Employee with id=%d not found", employeeId));
+        }
+
+        return employeeService.findById(employeeId);
+    }
+
+    @PostMapping("/employees")
+    public Employee addEmployee(@RequestBody Employee employee) {
+
+        // 0 to create, 1 to update
+        employee.setId(0);
+        employeeService.save(employee);
+
+        return employee;
+    }
+
+    @PutMapping("/employees")
+    public Employee updateEmployee(@RequestBody Employee employee) {
+
+        employeeService.save(employee);
+
+        return employee;
+    }
+
+    @DeleteMapping("/employees/{employeeId}")
+    public String deleteEmployee(@PathVariable int employeeId) {
+
+        Employee employee = employeeService.findById(employeeId);
+
+        if (employee == null) {
+            throw new RuntimeException("No employee with id " + employeeId);
+        }
+
+        employeeService.deleteById(employeeId);
+
+        return "Deleted employee with id " + employeeId;
     }
 
 

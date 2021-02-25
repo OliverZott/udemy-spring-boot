@@ -7,9 +7,9 @@ import javax.persistence.*;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -34,12 +34,11 @@ public class Employee {
         return super.toString();
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    @Id
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
