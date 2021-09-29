@@ -3,6 +3,7 @@ package org.velosaurus.demo.springbootdemo.dao;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 import org.velosaurus.demo.springbootdemo.entity.Employee;
 
@@ -10,6 +11,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 @Repository
+@Primary
 public class EmployeeDaoImpl implements EmployeeDao {
 
     private final EntityManager entityManager;
