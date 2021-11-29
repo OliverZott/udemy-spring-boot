@@ -15,6 +15,11 @@
 - `mvn spring-boot:run`
 - `curl localhost:8089/api/hello`
 
+# Actuator
+- `http://localhost:8089/actuator/health`
+- `http://localhost:8089/actuator/info`
+- for configuration: 
+  -   https://www.baeldung.com/spring-boot-actuator-enable-endpoints
 
 # Remarks
 - If in EntityManager session query Error like "'from' unexpected" ... 
