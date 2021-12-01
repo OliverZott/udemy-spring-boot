@@ -1,5 +1,6 @@
 package org.velosaurus.demo.springbootdemo.rest;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.velosaurus.demo.springbootdemo.entity.Employee;
@@ -32,6 +33,7 @@ public class EmployeeRestController {
     }
 
     // Jackson does marshalling automatically?
+    @JsonView(Employee.class)
     @GetMapping("/employees")
     public List<Employee> getEmployees() {
         return employeeService.getEmployees();

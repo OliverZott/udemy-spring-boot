@@ -1,6 +1,9 @@
 package org.velosaurus.demo.springbootdemo.entity;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import javax.persistence.*;
+
 
 @Entity
 @Table(name = "employee")
@@ -11,9 +14,11 @@ public class Employee {
     @Column(name = "id")
     private int id;
 
+    @JsonView(Employee.class)
     @Column(name = "first_name")
     private String firstName;
 
+    @JsonView(Employee.class)
     @Column(name = "last_name")
     private String lastName;
 

@@ -15,7 +15,17 @@
 - `mvn spring-boot:run`
 - `curl localhost:8089/api/hello`
 
-# Actuator
+
+# Remarks
+## Jackson (De)Serializer
+- works automatically in background
+- lives in component: **????**
+- **Customization**
+  - https://www.baeldung.com/jackson-json-view-annotation
+  - https://www.baeldung.com/spring-boot-customize-jackson-objectmapper
+  - https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring
+
+## Actuator
 - `http://localhost:8089/actuator/health`
 - `http://localhost:8089/actuator/info`
 - for configuration: 
