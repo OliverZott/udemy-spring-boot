@@ -17,6 +17,12 @@
 
 
 # Remarks
+
+## IoC / DI
+- Prioritize beans of same type
+  - `@Primary` and/or `@Qualifier("<BeanID>")` where BeanId is classsname with lower first case
+  - https://www.baeldung.com/spring-primary
+
 ## Jackson (De)Serializer
 - works automatically in background
 - lives in component: **????**
@@ -24,6 +30,8 @@
   - https://www.baeldung.com/jackson-json-view-annotation
   - https://www.baeldung.com/spring-boot-customize-jackson-objectmapper
   - https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring
+
+
 
 ## Actuator
 - `http://localhost:8089/actuator/health`
