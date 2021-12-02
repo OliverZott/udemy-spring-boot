@@ -9,6 +9,7 @@
 3. Make API request to: `http://localhost:8089/api/employees`
 
 
+-------------------------------------------------------------
 # Run / Build / Pack
 
 - `cd ./../udemy-spring-boot`
@@ -16,12 +17,29 @@
 - `curl localhost:8089/api/hello`
 
 
+-------------------------------------------------------------
 # Remarks
 
 ## IoC / DI
 - Prioritize beans of same type
   - `@Primary` and/or `@Qualifier("<BeanID>")` where BeanId is classsname with lower first case
   - https://www.baeldung.com/spring-primary
+
+
+## ORM 
+- EntityManager and native Hibernate API (**HQL**)
+- EntityManager and standard JPA API (**JPQL**)
+- Spring Data JPA  (**Repository Pattern**)
+
+## Spring Data JPA
+- **@Transactional** not necessary, implemented by Spring Data
+- **Pagination** / **Sorting**
+  - https://www.bezkoder.com/spring-boot-pagination-sorting-example/
+
+
+##  Spring Data REST
+
+
 
 ## Jackson (De)Serializer
 - works automatically in background
@@ -30,8 +48,7 @@
   - https://www.baeldung.com/jackson-json-view-annotation
   - https://www.baeldung.com/spring-boot-customize-jackson-objectmapper
   - https://spring.io/blog/2014/12/02/latest-jackson-integration-improvements-in-spring
-
-
+  
 
 ## Actuator
 - `http://localhost:8089/actuator/health`
@@ -39,6 +56,9 @@
 - for configuration: 
   -   https://www.baeldung.com/spring-boot-actuator-enable-endpoints
 
+
+
+-------------------------------------------------------------
 # Remarks
 - If in EntityManager session query Error like "'from' unexpected" ... 
   - `https://stackoverflow.com/questions/42871038/from-unexpected-when-createquery`

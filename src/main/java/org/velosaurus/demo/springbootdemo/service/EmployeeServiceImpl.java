@@ -26,6 +26,12 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeDao.findAll();
     }
 
+    // Not implemented in this version
+    @Override
+    public List<Employee> getEmployees(int page, int size) {
+        return null;
+    }
+
     @Override
     @Transactional
     public Employee findById(int id) {

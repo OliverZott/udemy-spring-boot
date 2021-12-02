@@ -8,6 +8,8 @@ public interface EmployeeService {
 
     List<Employee> getEmployees();
 
+    List<Employee> getEmployees(int page, int size);
+
     Employee findById(int id);
 
     void save(Employee employee);

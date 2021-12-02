@@ -2,6 +2,7 @@ package org.velosaurus.demo.springbootdemo.rest;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import org.velosaurus.demo.springbootdemo.entity.Employee;
 import org.velosaurus.demo.springbootdemo.service.EmployeeService;
@@ -20,7 +21,7 @@ public class EmployeeRestController {
     private final EmployeeService employeeService;
 
     @Autowired
-    public EmployeeRestController(EmployeeService employeeService) {
+    public EmployeeRestController(@Qualifier("employeeServiceRepoImpl") EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
@@ -32,12 +33,21 @@ public class EmployeeRestController {
         return "Hello, it's " + time + ". Alternative: " + LocalDateTime.now();
     }
 
-    // Jackson does marshalling automatically?
+//    // Jackson does marshalling automatically?
+//    @JsonView(Employee.class)
+//    @GetMapping("/employees")
+//    public List<Employee> getEmployees() {
+//        return employeeService.getEmployees();
+//    }
+
+    // Endpoint with pagination
     @JsonView(Employee.class)
     @GetMapping("/employees")
-    public List<Employee> getEmployees() {
-        return employeeService.getEmployees();
+    public List<Employee> getEmployees(@RequestParam(defaultValue = "0") int page,
+                                       @RequestParam(defaultValue = "100") int size) {
+        return employeeService.getEmployees(page, size);
     }
+
 
     @GetMapping("/employees/{employeeId}")
     public Employee getEmployee(@PathVariable int employeeId) {
