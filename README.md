@@ -6,7 +6,8 @@
 2. Start MySql Server
    1. Linux:  
    2. Windows: Start MySql80 from Services
-3. Make API request to: `http://localhost:8089/api/employees`
+3. API request (custom endpoint): `http://localhost:8089/api/employees`
+4. API request (spring-data-rest endpoints): `http://localhost:8089/employees`
 
 
 -------------------------------------------------------------
@@ -38,6 +39,13 @@
 
 
 ##  Spring Data REST
+- Autogenerate CRUD endpoints
+- only need:
+    - Entity
+    - Repository (like in spring-data-jpa)
+    - maven.pom dependency
+
+
 
 
 
