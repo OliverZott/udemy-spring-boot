@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello :)</title>
+
+    <!--    reference CSS files-->
+    <link rel="stylesheet" th:href="@{/css/demo.css}">
+</head>
+<body>
+
+<h1>Hello there :)</h1>
+<p class="funny" th:text="'Todays date is: ' + ${date}"></p>
+
+</body>
+</html>
