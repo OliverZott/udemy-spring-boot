@@ -33,6 +33,11 @@ public class EmployeeServiceRepoImpl implements EmployeeService {
     }
 
     @Override
+    public List<Employee> findAll() {
+        return employeeRepository.findAllByOrderByLastNameAsc();
+    }
+
+    @Override
     public Employee findById(int id) {
         Optional<Employee> employeeOptional = employeeRepository.findById(id);
 

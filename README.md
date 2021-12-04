@@ -37,6 +37,8 @@
 - **@Transactional** not necessary, implemented by Spring Data
 - **Pagination** / **Sorting**
   - https://www.bezkoder.com/spring-boot-pagination-sorting-example/
+- Magic query methods
+  - https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.query-methods.details
 
 
 ##  Spring Data REST

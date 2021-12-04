@@ -49,4 +49,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void deleteById(int id) {
         employeeDao.deleteById(id);
     }
+
+
+    // unused at the moment-
+    @Override
+    public List<Employee> findAll() {
+        return null;
+    }
 }
