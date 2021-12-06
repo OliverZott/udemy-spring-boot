@@ -48,6 +48,12 @@
     - Repository (like in spring-data-jpa)
     - maven.pom dependency
 
+## Logging
+- https://www.youtube.com/watch?v=ifIlljI4FZY
+- https://www.youtube.com/watch?v=lGrcZsw-hKQ
+- http://logback.qos.ch/
+
+
 ## Thymeleaf
 - https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/13241674#questions
 - local files: folder structure important!
